@@ -1,0 +1,148 @@
+{
+  "provider": "European Central Bank",
+  "dataset": "Euro foreign exchange reference rates \u2014 daily XML",
+  "sourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+  "resolvedSourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+  "referencePageUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+  "fetchedAtUTC": "2026-10-22T21:04:48.155898+00:00",
+  "fetchedDateUTC": "2026-10-22",
+  "asOfDate": "2026-10-22",
+  "baseCurrency": "USD",
+  "sourceBaseCurrency": "EUR",
+  "sourceUSDPerEUR": "1.1205",
+  "conversionFormula": "amount in reporting currency = amount in USD * (ECB reporting-currency units per EUR / ECB USD units per EUR). EUR uses 1 unit per EUR; USD uses 1 unit per USD.",
+  "usage": "Reporting conversion of USD Azure reference estimates only. This is not an Azure local-currency price list, exchange quote, invoice rate, tax calculation or live FX feed.",
+  "freshnessPolicy": "Show the official asOfDate prominently. The fetched date is not the rate publication date. Never label this snapshot live.",
+  "currencies": [
+    {
+      "code": "USD",
+      "name": "US Dollar",
+      "unitsPerUSD": 1.0,
+      "unitsPerUSDDecimal": "1",
+      "rawUnitsPerEUR": "1.1205",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "EUR",
+      "name": "Euro",
+      "unitsPerUSD": 0.892458723784025,
+      "unitsPerUSDDecimal": "0.89245872378402498884426595269969",
+      "rawUnitsPerEUR": "1",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "GBP",
+      "name": "British Pound",
+      "unitsPerUSD": 0.7476126729138778,
+      "unitsPerUSDDecimal": "0.74761267291387773315484158857653",
+      "rawUnitsPerEUR": "0.83770",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "INR",
+      "name": "Indian Rupee",
+      "unitsPerUSD": 94.82284694332887,
+      "unitsPerUSDDecimal": "94.822846943328871039714413208389",
+      "rawUnitsPerEUR": "106.2490",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "CAD",
+      "name": "Canadian Dollar",
+      "unitsPerUSD": 1.4033913431503793,
+      "unitsPerUSDDecimal": "1.4033913431503792949576082106203",
+      "rawUnitsPerEUR": "1.5725",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "AUD",
+      "name": "Australian Dollar",
+      "unitsPerUSD": 1.426149040606872,
+      "unitsPerUSDDecimal": "1.4261490406068719321731369924141",
+      "rawUnitsPerEUR": "1.5980",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "SGD",
+      "name": "Singapore Dollar",
+      "unitsPerUSD": 1.2775546630968317,
+      "unitsPerUSDDecimal": "1.2775546630968317715305667112896",
+      "rawUnitsPerEUR": "1.4315",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "JPY",
+      "name": "Japanese Yen",
+      "unitsPerUSD": 157.04596162427487,
+      "unitsPerUSDDecimal": "157.04596162427487728692547969656",
+      "rawUnitsPerEUR": "175.97",
+      "minorUnitDigits": 0
+    },
+    {
+      "code": "CHF",
+      "name": "Swiss Franc",
+      "unitsPerUSD": 0.8220437304774654,
+      "unitsPerUSDDecimal": "0.82204373047746541722445336903168",
+      "rawUnitsPerEUR": "0.9211",
+      "minorUnitDigits": 2
+    },
+    {
+      "code": "NZD",
+      "name": "New Zealand Dollar",
+      "unitsPerUSD": 1.760285586791611,
+      "unitsPerUSDDecimal": "1.7602855867916108879964301651049",
+      "rawUnitsPerEUR": "1.9724",
+      "minorUnitDigits": 2
+    }
+  ],
+  "rawQuotesPerEUR": {
+    "USD": "1.1205",
+    "JPY": "175.97",
+    "CZK": "24.260",
+    "DKK": "7.4747",
+    "GBP": "0.83770",
+    "HUF": "366.43",
+    "PLN": "4.3695",
+    "RON": "5.3450",
+    "SEK": "11.1120",
+    "CHF": "0.9211",
+    "ISK": "136.20",
+    "NOK": "10.4880",
+    "TRY": "55.6079",
+    "AUD": "1.5980",
+    "BRL": "5.6574",
+    "CAD": "1.5725",
+    "CNY": "7.4786",
+    "HKD": "8.7845",
+    "IDR": "20253.88",
+    "ILS": "3.4824",
+    "INR": "106.2490",
+    "KRW": "1484.25",
+    "MXN": "21.0215",
+    "MYR": "4.5756",
+    "NZD": "1.9724",
+    "PHP": "71.162",
+    "SGD": "1.4315",
+    "THB": "37.811",
+    "ZAR": "18.5058"
+  },
+  "responseHeaders": {
+    "date": "Thu, 22 Oct 2026 21:04:48 GMT",
+    "content-type": "text/xml",
+    "last-modified": "Thu, 22 Oct 2026 13:56:14 GMT",
+    "cache-control": "max-age=300"
+  },
+  "ratesPerUSD": {
+    "USD": 1.0,
+    "EUR": 0.892458723784025,
+    "GBP": 0.7476126729138778,
+    "INR": 94.82284694332887,
+    "CAD": 1.4033913431503793,
+    "AUD": 1.426149040606872,
+    "SGD": 1.2775546630968317,
+    "JPY": 157.04596162427487,
+    "CHF": 0.8220437304774654,
+    "NZD": 1.760285586791611
+  },
+  "displayPrecisionPolicy": "Keep full calculated numeric precision for arithmetic; round only formatted totals. Currency formatting may use minorUnitDigits; small per-token/per-request rates need extra precision or a per-million unit."
+}

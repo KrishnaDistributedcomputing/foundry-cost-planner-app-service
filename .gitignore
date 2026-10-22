@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.azure/
+*.zip
+*.log
+temporary screenshots/
+.DS_Store
+Thumbs.db
