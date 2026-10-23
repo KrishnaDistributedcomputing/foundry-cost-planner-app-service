@@ -54,16 +54,146 @@ security, availability, and operating requirements.
 | Operations or infrastructure team | Support cloud and local delivery | Equipment, power, maintenance, licences, support effort, and continuity |
 | Procurement or governance team | Validate commercial and control assumptions | Contract prices, region and model eligibility, access, and approval evidence |
 
-### Typical use cases
+### AI cost use-case library
 
-* Plan an employee assistant or retrieval-augmented knowledge application.
-  Model generation, search capacity, ingestion, and support separately.
-* Estimate a document-processing workflow. Include OCR, embeddings, storage,
-  and review effort rather than treating every document as one model call.
-* Compare cloud and hybrid delivery for sites with connectivity or data-handling
-  constraints. Cost the local operating environment as well as cloud usage.
-* Prepare a pilot-to-production funding request with low, expected, and high
-  demand scenarios and an auditable explanation of the differences.
+[Explore all 10 use cases in the app](https://foundry-cost-planner-kvenk.azurewebsites.net/#ai-cost-use-cases).
+
+These are planning guides, not automatic presets. Opening a use-case input link
+does not replace the current scenario. The calculator reports operating cost per
+planned task; outcome-based measures below require a separate calculation using
+the same cost scope and time period.
+
+#### 1. Customer support and service agents
+
+Estimate a complete case, including multi-turn conversations, retrieval, tool
+calls, retries, human review, and escalation. Use one task per case and measure
+average calls across all attempts, including failures. Add paid APIs and human
+handling as custom recurring costs when they are in scope.
+
+Compare cost per successfully resolved case at a consistent service quality and
+response time. Lower model spend is not a saving if poor answers increase repeat
+contacts. Do not count retries twice when measured calls already include them.
+
+#### 2. Employee knowledge and RAG assistants
+
+Measure questions, retrieved-context tokens, embedding volume, document changes,
+search capacity, storage, and ingestion operations. Separate initial indexing
+from recurring refreshes, and price generation independently from retrieval.
+
+Track cost per accepted, grounded answer and the required freshness and quality.
+Reducing cloud-routed generation does not automatically reduce provisioned
+search, ingestion, or storage quantities.
+
+#### 3. Invoice, claims, and document processing
+
+Use one task per document and measure pages, calls, extraction tokens, retention,
+exceptions, and human corrections. For a machine queue, one workload user with
+documents per day as tasks is a usable convention when clearly documented.
+
+Price OCR and extraction using the exact meter. The included Document
+Intelligence Read rate is not a universal layout or prebuilt-extraction price.
+Compare cost per accepted document, correction effort, and turnaround time;
+one document is not necessarily one billable page.
+
+#### 4. Multi-step agents and business automation
+
+Budget planning, tool execution, validation, retries, sandbox compute, approval,
+and recovery for workflows such as onboarding or reconciliation. Measure the
+full call chain, including incomplete and difficult runs.
+
+Use calls per business task and custom tool, worker, or reviewer lines.
+Different model tariffs need separate scenarios. Compare cost per correctly
+completed workflow and completion rate. Runtime limits and approval policies
+must be implemented in the application; this calculator does not enforce them.
+
+#### 5. Coding assistants and code-review agents
+
+For API-based assistance, measure tasks per engineer, repository-context tokens,
+billed output including reasoning, review calls, and test-and-repair loops.
+Add indexing, build runners, storage, and human review as separate costs.
+
+Track cost per accepted, tested change or reviewed pull request, not generated
+lines of code. Seat-based licences are custom service costs rather than an
+automatic token-price equivalent. Select the applicable context tariff and
+count billed reasoning once.
+
+#### 6. Batch classification and summarization
+
+Model catalogue enrichment, tagging, backlog processing, and summarization using
+one task per item. Include failed or repeated jobs, queue storage, worker hours,
+and the required completion window.
+
+Global PAYG presets do not imply batch pricing, eligibility, quotas, or delivery
+guarantees. Use verified custom batch or contract rates in a separate scenario.
+Compare cost per accepted item and on-time completion, and do not apply a
+discount again when it is already included in the chosen rate.
+
+#### 7. Voice assistants and contact-centre analytics
+
+Measure billed audio minutes or tokens, transcription, generated speech,
+text-model processing, telephony, recordings, and retention. Reconcile each
+quantity with the exact service's billing unit.
+
+The model engine estimates text-token costs; it does not natively infer audio
+pricing. Add speech and telephony costs as custom lines. Avoid double counting
+when a tariff bundles modalities. Compare cost per analyzed audio hour or
+successful interaction, alongside latency and transcription quality.
+
+#### 8. Image analysis and video inspection
+
+For product images, visual document review, or inspections, measure images,
+frames, resolution/detail level, modality-specific tokens, storage, transfer,
+video processing, and human verification.
+
+Image and video prices are not inferred from file count or duration. Use
+measured billable tokens only when they match the selected tariff, or add
+explicit custom modality costs. A text-only preset is not proof of vision
+support. Compare cost per validated image or inspected video hour and the
+false-accept/reject rate.
+
+#### 9. Branch, retail, and industrial edge assistants
+
+Compare local or hybrid delivery for intermittent connectivity or data-location
+constraints. Measure devices per site, utilization, peak concurrency, power,
+maintenance, local storage, updates, and support visits.
+
+Use local equipment and operating lines, with purchase timing and useful life.
+Hardware fields represent a homogeneous device group; different device classes
+need separate scenarios and shared-cost reconciliation. Compare cost per site
+and successful local task together with offline availability. Zero Azure
+model-token cost does not mean zero operating cost or validated capacity.
+
+#### 10. Model evaluation and release assurance
+
+Budget test cases, model candidates, repeated runs, judge calls, test compute,
+trace retention, and expert review. Separate initial model selection from
+recurring regression and release checks.
+
+Use separate scenarios for distinct candidate or judge tariffs. Add reviewer,
+compute, and monitoring costs as custom lines, with the actual one-time or
+recurring cadence. Track cost per accepted release or qualified candidate
+against quality thresholds. The calculator does not run evaluations, measure
+accuracy, or automate governance approval.
+
+### Compare use cases without double counting
+
+1. Define the business task and successful outcome. Include failures and rework
+   in the cost base.
+2. Create low, expected, and high demand scenarios from measured volumes,
+   token sizes, call chains, capacity, and human effort.
+3. Separate rollout and initial ingestion from recurring operations. Assign
+   custom lines to the correct cloud, local, or shared environment. Preserve
+   fixed services that remain provisioned even at low adoption.
+4. Calculate outcome unit cost separately as in-scope cost divided by successful
+   outcomes in the same period. Use cash budgets for funding or allocated costs
+   for economic comparisons.
+5. Save scenario JSON and export CSV evidence. When combining workloads,
+   allocate shared hosting, search, grants, and operations once.
+
+One scenario uses one model tariff and one average workload. The application
+does not automatically load use-case presets, consolidate model portfolios,
+calculate ROI, model demand growth, or enforce spending limits. Do not add
+several complete solution budgets without reconciling their shared costs.
 
 ## What the calculator includes
 

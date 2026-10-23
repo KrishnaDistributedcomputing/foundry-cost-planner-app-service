@@ -106,6 +106,7 @@
 <p>A low price per model call is not the same as a low-cost production solution. Search, document ingestion, gateways, private connectivity, monitoring, local equipment and support can outweigh token charges, especially when provisioned services run continuously at low utilization.</p>
 <p>This calculator brings those layers into one forecast so you can compare cloud-only, local-only and hybrid approaches, distinguish upfront cash from recurring costs, and explain a funding request with traceable assumptions. It is a planning tool, not an Azure quote, invoice or capacity guarantee.</p>
 <p class="environment-note">Start with a business outcome: faster document review, less time searching for knowledge, improved service turnaround or more capacity for employees. A cheaper design is not a better investment if it misses quality, latency, security or availability requirements.</p>
+<p class="subtle-note"><a href="#ai-cost-use-cases">Explore 10 AI cost use cases</a> to connect your business workflow to the right measurements, calculator inputs and success criteria.</p>
 </section>
 <div class="rules-grid">
 <article class="panel"><h3>Business sponsors and product owners</h3><p>Define who will use the service, how often, and what a successful task means. Use the forecast to assess affordability, adoption assumptions and the funding required to move from pilot to production.</p><p>Typical scenarios include employee knowledge assistants, document-processing workflows and AI services at intermittently connected sites.</p></article>
@@ -283,8 +284,126 @@ vllm serve /srv/models/approved-instruct \
   <header class="learn-intro panel">
     <p class="eyebrow">Learn the numbers</p>
     <h2 id="learn-title">From one question to a complete solution budget</h2>
-    <p>Start with these six lessons, then change one assumption in the calculator and watch its effect. The goal is a forecast you can explain: workload, billable quantities, prices, infrastructure and a reserve for uncertainty.</p>
+    <p>Explore ten practical AI cost use cases, then follow the six lessons below. Build a forecast you can explain: business demand, model usage, supporting services, operating effort and a reserve for uncertainty.</p>
+    <p><a href="#ai-cost-use-cases">Browse AI cost use cases</a> · <a href="#learn-tokens">Start the costing lessons</a></p>
   </header>
+
+  <section id="ai-cost-use-cases" aria-labelledby="ai-cost-use-cases-title">
+    <div class="workspace-heading"><div><div class="section-kicker">BUSINESS WORKFLOW TO COST MODEL</div><h2 id="ai-cost-use-cases-title">Plan the use case, not just the model.</h2><p>These are planning guides, not prefilled scenarios. Opening an input link keeps your current values. Outcome-based unit costs require a separate calculation; the app shows operating cost per planned task.</p></div></div>
+    <div class="learn-lessons">
+      <article class="learn-lesson panel" aria-labelledby="use-case-support">
+        <p class="eyebrow">Use case 01 · customer operations</p><h3 id="use-case-support">Customer support and service agents</h3>
+        <p>Estimate the cost of resolving a customer case, not just generating one answer. Multi-turn conversations, retrieval, tool calls and escalations can change the economics of automation.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure cases per month, turns and model calls per case, conversation-history tokens, retries, tool fees and the share resolved without rework. Add gateway, search, logging and human-review effort where in scope.</p>
+          <p>Use one task per case and average calls across all attempts. Include paid tool/API requests and human handling as custom recurring lines. Do not add a second retry allowance if measured calls already include retries.</p>
+          <p>Compare in-scope operating cost per successfully resolved case at a fixed service quality and response time. A higher containment rate is not a saving if poor answers increase repeat contacts.</p>
+        </details>
+        <p><a href="#scenario-settings">Set support workload assumptions</a> · <a href="#operations-services">Add review and tool costs</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-rag">
+        <p class="eyebrow">Use case 02 · enterprise knowledge</p><h3 id="use-case-rag">Employee knowledge and RAG assistants</h3>
+        <p>Budget for answers grounded in internal documents. Search capacity, document ingestion and embedding refresh can outweigh generation costs when adoption is low.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure questions, retrieved-context tokens, document changes, embedding tokens, search replicas and partitions, storage and ingestion operations. Separate initial indexing from recurring refreshes.</p>
+          <p>Enter generation in the workload, then size search, embeddings and document services explicitly. Record initial ingestion as a one-time line when appropriate. Changing cloud share does not resize those services automatically.</p>
+          <p>Track cost per accepted, grounded answer, retrieval quality and freshness. Validate whether reducing context or capacity preserves answer quality before claiming a saving.</p>
+        </details>
+        <p><a href="#cloud-services">Size retrieval and ingestion</a> · <a href="#models">Compare generation models</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-documents">
+        <p class="eyebrow">Use case 03 · document operations</p><h3 id="use-case-documents">Invoice, claims and document processing</h3>
+        <p>Estimate the cost of turning documents into accepted business records. OCR, extraction, validation, exception handling and retention are separate parts of the workflow.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure documents and pages, scanned versus digital content, model calls, extraction tokens, storage retention and the manual-review share. Use representative short and long documents.</p>
+          <p>Represent one document as a task. For a machine-driven queue, you can use one workload user and documents per day as tasks, documenting that convention. Enter billed pages separately; do not treat a document as one OCR page.</p>
+          <p>The included Document Intelligence Read meter is not a universal price for layout or prebuilt extraction. Use the exact supported meter or a custom rate. Track cost per accepted document, correction effort and turnaround time.</p>
+        </details>
+        <p><a href="#scenario-settings">Set document throughput</a> · <a href="#cloud-services">Add document service quantities</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-agents">
+        <p class="eyebrow">Use case 04 · workflow automation</p><h3 id="use-case-agents">Multi-step agents and business automation</h3>
+        <p>Cost a completed workflow such as onboarding, reconciliation or case preparation. Planning, tool execution, validation and recovery can require several model calls per task.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure the full call chain, failed attempts, retries, prompt growth, paid tools, sandbox compute and approval effort. Include hard cases and incomplete runs, not only successful demonstrations.</p>
+          <p>Use average total model calls per business task and add custom tool, worker-compute and review lines. For multiple models with different tariffs, use separate model scenarios rather than applying one model's rate to every step.</p>
+          <p>Track cost per correctly completed workflow and completion rate. Runtime limits, spend caps and human approval policies must be enforced by the real application; this calculator does not enforce them.</p>
+        </details>
+        <p><a href="#scenario-settings">Model agent call counts</a> · <a href="#operations-services">Add workflow operating costs</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-development">
+        <p class="eyebrow">Use case 05 · software engineering</p><h3 id="use-case-development">Coding assistants and code-review agents</h3>
+        <p>Evaluate API-based coding assistance using accepted changes and review outcomes, not generated lines of code. Repository context and repeated test-and-repair loops can dominate usage.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure tasks per engineer, repository-context tokens, billed output including reasoning, review calls, retries and test-runner or sandbox usage. Track acceptance, correctness and review effort.</p>
+          <p>Use the workload and model comparison for API consumption. Add indexing, build runners, storage and review labour separately. Seat-based assistant licences are custom service costs, not automatically equivalent to token billing.</p>
+          <p>Compare cost per accepted, tested change or reviewed pull request at comparable quality. Apply the correct context tariff and count reasoning only once in billed output.</p>
+        </details>
+        <p><a href="#models">Inspect model and context tariffs</a> · <a href="#operations-services">Add licences and build costs</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-batch">
+        <p class="eyebrow">Use case 06 · high-volume processing</p><h3 id="use-case-batch">Batch classification and summarization</h3>
+        <p>Estimate asynchronous tagging, catalogue enrichment or large-scale summarization when jobs can tolerate a completion window rather than interactive latency.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure items, tokens per item, failed or reprocessed jobs, queue storage, worker hours and delivery deadlines. Compare a normal processing cycle with a backlog-clearing scenario.</p>
+          <p>Use one task per item and explicit calls per task. Batch pricing, eligibility, quotas and completion guarantees are not implied by the Global PAYG presets. Enter verified batch/contract rates as custom rates in a separate scenario.</p>
+          <p>Track cost per accepted item and completion within the required window. Compare like-for-like totals; do not apply an assumed batch discount on top of a rate that already includes it.</p>
+        </details>
+        <p><a href="#models">Enter the applicable custom rates</a> · <a href="#scenario-settings">Set item volume and calls</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-voice">
+        <p class="eyebrow">Use case 07 · voice experiences</p><h3 id="use-case-voice">Voice assistants and contact-centre analytics</h3>
+        <p>Separate speech, language-model reasoning and voice output when planning voice services. Audio processing does not become a complete estimate by entering transcript tokens alone.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure billed audio minutes or tokens, transcription, generated speech, text-model calls, telephony, recordings and retention. Reconcile each quantity to the exact service's billing unit.</p>
+          <p>The model engine is a text-token estimator, not a native audio-pricing engine. Add transcription, speech synthesis, telephony and storage as custom lines using verified units and prices. If a tariff bundles modalities, avoid counting the same charge twice.</p>
+          <p>Track cost per analyzed audio hour or successfully completed voice interaction, alongside latency and transcription quality. Real-time throughput and concurrency require separate testing.</p>
+        </details>
+        <p><a href="#operations-services">Add speech and telephony meters</a> · <a href="#scenario-settings">Model the text-processing workload</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-vision">
+        <p class="eyebrow">Use case 08 · multimodal operations</p><h3 id="use-case-vision">Image analysis and video inspection</h3>
+        <p>Plan product-image checks, visual document review or inspection workflows using the actual image or video tariff and the expected review workload.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure images, frames, resolution or detail level, modality-specific token counts, video processing, storage, transfer and human verification. Sample difficult cases as well as typical ones.</p>
+          <p>The calculator does not infer image or video billing from file count, resolution or duration. Enter measured billable tokens only when they match the selected tariff, or add explicit custom modality lines. Count follow-up text generation separately only when it is separately billed.</p>
+          <p>Track cost per validated image or inspected video hour and the false-accept/reject rate. A text-only model preset is not proof that the required vision feature or pricing is supported.</p>
+        </details>
+        <p><a href="#operations-services">Add explicit image/video cost lines</a> · <a href="#cloud-services">Review storage and data transfer</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-edge">
+        <p class="eyebrow">Use case 09 · local and edge AI</p><h3 id="use-case-edge">Branch, retail and industrial edge assistants</h3>
+        <p>Compare local or hybrid delivery for sites with intermittent connectivity or data-location constraints. Zero Azure model-token charges do not mean zero operating cost.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure devices per site, inference utilization, peak concurrency, power, maintenance, model updates, local storage and support visits. Include rollout and recovery effort across the fleet.</p>
+          <p>Use Local only or Hybrid, then enter equipment purchase timing, useful life, power and local service lines. Hardware fields describe a homogeneous group; use separate scenarios for different device classes and reconcile shared costs once.</p>
+          <p>Track cost per site and successful local task, together with offline availability. Capacity, licences, fully local identity and recovery must be validated; the calculator does not deploy or benchmark the runtime.</p>
+        </details>
+        <p><a href="#local-hardware">Price local equipment</a> · <a href="#local-only-deployment">Review local deployment requirements</a></p>
+      </article>
+      <article class="learn-lesson panel" aria-labelledby="use-case-evaluation">
+        <p class="eyebrow">Use case 10 · quality and governance</p><h3 id="use-case-evaluation">Model evaluation and release assurance</h3>
+        <p>Budget for the work needed to choose, test and safely maintain an AI system. Evaluation runs, model judges and recurring regression tests are not free overhead.</p>
+        <details><summary>Cost drivers, inputs and success measures</summary>
+          <p>Measure test cases, candidates, repeated runs, judge calls, token usage, test compute, trace retention and expert review. Separate initial selection from recurring release checks.</p>
+          <p>Model each candidate or judge tariff separately when needed. Add compute, observability and reviewer time as custom lines. Label initial evaluation as one-time and release testing as recurring according to your actual cadence.</p>
+          <p>Track cost per accepted release or qualified candidate against explicit quality thresholds. This application does not run evaluations, calculate model accuracy or automate governance approval.</p>
+        </details>
+        <p><a href="#models">Compare candidate model costs</a> · <a href="#operations-services">Budget evaluation and reviewer effort</a></p>
+      </article>
+    </div>
+    <section class="panel planner-panel" aria-labelledby="use-case-comparison-title">
+      <div class="section-title"><div><h3 id="use-case-comparison-title">Turn a use case into a comparable business case</h3><p>Keep workload, service quality, time period and cost basis consistent.</p></div></div>
+      <ol>
+        <li>Define the task and a measurable successful outcome. Include failed attempts and rework in the costs, not just successful requests.</li>
+        <li>Collect measured quantities, then create low, expected and high demand scenarios. Compare call counts, token sizes, capacity and human effort without changing every assumption at once.</li>
+        <li>Separate one-time rollout or ingestion from steady-state operations. Assign custom lines to their cloud, local or shared environment. Preserve fixed services that remain provisioned even when adoption is low.</li>
+        <li>Calculate outcome unit cost separately as the selected in-scope cost divided by successful outcomes in the same period. Compare cash budgets for funding or allocated costs for economic decisions; do not mix them.</li>
+        <li>Save scenario JSON and export CSV evidence. When combining use cases, allocate shared hosting, search, grants and operations once rather than adding several full-stack budgets blindly.</li>
+      </ol>
+      <p class="subtle-note">One scenario uses one model tariff and one average workload. The app does not automatically load use-case presets, combine model portfolios, calculate ROI, model demand growth or enforce spending caps. Unpriced custom costs must be resolved before treating a forecast as decision-ready.</p>
+    </section>
+  </section>
 
   <div class="learn-lessons">
     <article class="learn-lesson panel" aria-labelledby="learn-tokens">
@@ -410,6 +529,8 @@ vllm serve /srv/models/approved-instruct \
 
   <section class="learn-faq panel" aria-labelledby="learn-faqs-title">
     <h3 id="learn-faqs-title">Questions people usually ask</h3>
+    <details><summary>Can I price audio, images or video with the text-token presets?</summary><p>Not automatically. Use the exact service's billing quantities and rates in custom cost lines, or measured tokens only when they match the tariff. Add speech, image, video, telephony and associated storage charges explicitly, without counting bundled charges twice.</p></details>
+    <details><summary>How do I estimate a workflow that uses several models?</summary><p>Use separate scenarios for different model tariffs or workloads, then reconcile the results outside the app. Sum each model's consumption once and allocate shared infrastructure, grants and operations once. Adding complete solution budgets without that reconciliation can double count costs.</p></details>
     <details><summary>Why could my Azure invoice differ?</summary><p>Actual usage, price dates, regional meters, negotiated terms, taxes, allowances and currency treatment may differ. Reconcile usage and meter identifiers before comparing totals.</p></details>
     <details><summary>Why does reducing cloud traffic not remove all cloud cost?</summary><p>Provisioned compute, search and networking can remain enabled. Review those quantities separately from token consumption.</p></details>
     <details><summary>Is the lowest token price the best choice?</summary><p>Compare cost per successful task. Extra calls, retries or longer answers can offset a cheaper token rate. Test quality with your own examples.</p></details>

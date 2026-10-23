@@ -11,5 +11,7 @@
 .repository-panel a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .repository-panel a:active{color:var(--ink)}
 .repository-panel .secondary-button:active{transform:translateY(1px)}
+#ai-cost-use-cases a:hover,#ai-cost-use-cases summary:hover,a[href="#ai-cost-use-cases"]:hover,.learn-intro a:hover{text-decoration:underline}
+#ai-cost-use-cases a:active,#ai-cost-use-cases summary:active,a[href="#ai-cost-use-cases"]:active,.learn-intro a:active{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){.solution-cost-bar span{transition:none}}
 @media print{.workspace-tabs,.solution-inputs,.scenario-file-actions,.reporting-panel,.architecture-stack em{display:none}.tab-panel[hidden]{display:none!important}.solution-layout{display:block}.solution-results-sticky{position:static}.solution-budget{color:#18243b;background:#eef4ff}.solution-budget *{color:#18243b!important}.solution-results .solution-breakdown>h3,.solution-results .solution-breakdown>.cost-lines,.solution-results .solution-breakdown>.tco-note{display:block}.solution-results .solution-metrics{grid-template-columns:repeat(2,1fr)}.method-grid,.rules-grid{grid-template-columns:1fr 1fr}.architecture-board{break-inside:avoid}.site-footer{display:none}}
