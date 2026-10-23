@@ -14,6 +14,9 @@ business, finance, and engineering teams can discuss the same assumptions.
 | [Read How costing works](https://foundry-cost-planner-kvenk.azurewebsites.net/#how-costing-works)
 | [Azure deployment guide](./README-AZURE.md)
 
+The app's GitHub repository tab links to the source code and project
+documentation. Azure hosting instructions remain in the deployment guide above.
+
 > [!IMPORTANT]
 > This is a planning tool, not an Azure quote, invoice, sizing guarantee, or
 > live connection to your subscription. Published prices and exchange rates are

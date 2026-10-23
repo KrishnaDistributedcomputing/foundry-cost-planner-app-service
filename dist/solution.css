@@ -6,5 +6,10 @@
 .reference-diagram .secondary-button:hover{background:var(--blue-light)}
 .reference-diagram .secondary-button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .reference-diagram .secondary-button:active{transform:translateY(1px)}
+.repository-panel .secondary-button:hover{background:var(--blue-light)}
+.repository-panel a:hover{text-decoration:underline}
+.repository-panel a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.repository-panel a:active{color:var(--ink)}
+.repository-panel .secondary-button:active{transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){.solution-cost-bar span{transition:none}}
 @media print{.workspace-tabs,.solution-inputs,.scenario-file-actions,.reporting-panel,.architecture-stack em{display:none}.tab-panel[hidden]{display:none!important}.solution-layout{display:block}.solution-results-sticky{position:static}.solution-budget{color:#18243b;background:#eef4ff}.solution-budget *{color:#18243b!important}.solution-results .solution-breakdown>h3,.solution-results .solution-breakdown>.cost-lines,.solution-results .solution-breakdown>.tco-note{display:block}.solution-results .solution-metrics{grid-template-columns:repeat(2,1fr)}.method-grid,.rules-grid{grid-template-columns:1fr 1fr}.architecture-board{break-inside:avoid}.site-footer{display:none}}
